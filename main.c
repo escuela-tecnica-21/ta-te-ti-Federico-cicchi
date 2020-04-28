@@ -4,8 +4,6 @@
 void refrescar (char tablero[3][3]); //se llama a la funcion.
 void introduccion_numeros (char tablero[3][3]); //se llama a la funcion.
 void llenar_tablero (char tablero[3][3]); //se llama a la funcion.
-void introduccion_IA (char tablero[3][3]);//se llama a la funcion.
-
 int main()
 {
      char tablero [3][3]; //esta matriz vendria siendo nuestro tablero.
@@ -24,7 +22,7 @@ void refrescar (char tablero[3][3]) //esta funcion reinicia e inicia las veces q
 
   introduccion_numeros(tablero); //dicha funcion va a aparecer por pantalla por unica vez, por que el proceso se repite con los nuevos datos ingresados.
 
- do
+do
  {
 
   llenar_tablero(tablero); //dicha funcion va a aparecer por pantalla por unica vez, por que el proceso se repite con los nuevos datos ingresados.
@@ -88,8 +86,7 @@ void llenar_tablero (char tablero[3][3])//esta funcion se va a encargar de llena
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void introduccion_IA (char tablero[3][3]) //esta funcion sirve para que la amquina pueda poner una ficha en el casillero de manera aleatoria.
-
+voidintroduccion_IA (char tablero[3][3]) //esta funcion sirve para que la amquina pueda poner una ficha en el casillero de manera aleatoria.
 {
     int a, b, c; //variables que solo se usan para el proceso de numeros random.
 
