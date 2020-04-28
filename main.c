@@ -4,7 +4,6 @@
 void refrescar (char tablero[3][3]); //se llama a la funcion.
 void introduccion_numeros (char tablero[3][3]); //se llama a la funcion.
 void llenar_tablero (char tablero[3][3]); //se llama a la funcion.
-void introduccion_fichas (char tablero[3][3]);//se llama a la funcion.
 void introduccion_IA (char tablero[3][3]);//se llama a la funcion.
 
 int main()
@@ -59,139 +58,7 @@ void introduccion_numeros (char tablero[3][3])//esta funcion lo que hace es llen
       }
   }
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void introduccion_fichas (char tablero[3][3]) //esta funcion sirve para yo poder ingresar las fichas en el lugar que quiera.
-{
-   int c,d,e; //variables para detectar lugares en donde ya hay fichas,c (filas), d (columnas).
-   char ficha; //esta variable representa la ficha que nosotros vamos a colocar en el tablero.
-
-   do
-   {
-       do
-       {
-          printf("coloca tu ficha en algun lugar del tablero: ");
-          fflush (stdin); // lo uso para que el priintf slaga limpio en la pantalla osea sin nigun tipo de error, etc.
-          scanf("%c",&ficha);
-
-       }while (ficha < '1'  ||  ficha > '9'); //el ciclo se va a repetir mientras que la ficha este entre la posicion 1 y 9 del tablero.
-
-        e=0;
-
-        switch (ficha) //esto lo que hace es recorrer en este caso todas las posiciones del tablero en busca de una ficha repetida, osea que no se va a poder colocar una ficha en donde ya hay una existente.
-       {
-           case '1': // en caso de ser la posicion 1 del tablero.
-           {
-            c=0; //se inicializan las filas en 0.
-            d=0; //se inicializan las columnas en 0.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 1 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 2 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '2': // en caso de ser la posicion 2 del tablero.
-           {
-            c=0; //se inicializan las filas en 0.
-            d=1; //se inicializan las columnas en 1.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 2 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 3 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '3': // en caso de ser la posicion 3 del tablero.
-           {
-            c=0; //se inicializan las filas en 0.
-            d=2; //se inicializan las columnas en 2.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 3 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 4 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '4': // en caso de ser la posicion 4 del tablero.
-           {
-            c=1; //se inicializan las filas en 1.
-            d=0; //se inicializan las columnas en 0.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 4 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 5 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '5': // en caso de ser la posicion 5 del tablero.
-           {
-            c=1; //se inicializan las filas en 1.
-            d=1; //se inicializan las columnas en 1.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 5 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 6 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '6': // en caso de ser la posicion 6 del tablero.
-           {
-            c=1; //se inicializan las filas en 1.
-            d=2; //se inicializan las columnas en 2.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 6 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 7 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '7': // en caso de ser la posicion 7 del tablero.
-           {
-            c=2; //se inicializan las filas en 2.
-            d=0; //se inicializan las columnas en 0.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 7 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 8 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '8': // en caso de ser la posicion 8 del tablero.
-           {
-            c=2; //se inicializan las filas en 2.
-            d=1; //se inicializan las columnas en 1.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 8 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 9 del tablero para verificar lo mismo, y asi hasta llegar hasta la posicion 9.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-
-           case '9': // en caso de ser la posicion 9 del tablero.
-           {
-            c=2; //se inicializan las filas en 2.
-            d=2; //se inicializan las columnas en 2.
-            if (tablero[c][d] =='X' || tablero[c][d] =='O') //este if lo que hace es que si en la posicion 9 del tablero ya hay puesta una ficha entonces se corre hasta la posicion 1 del tablero nuevamente para verificar lo mismo, y asi hasta llegar hasta la posicion 9 otra vex.
-            {
-               e == 1; //la variable e vendria siendo usada como via de escape del if para poder saber si la casilla esta ocupada o no.
-               printf ("esta casilla esta ocupada, elija otra\n\n");
-            }
-            break;
-           }
-       }
-    }while (e == 1); //el ciclo se va repetir mientras que e sea igual a 1, significando que la casilla esta ocupada.
-
-    tablero[c][d] ='X'; //esto lo que indica es que nuestra ficha vendria siendo la X.
-}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void llenar_tablero (char tablero[3][3])//esta funcion se va a encargar de llenar y dibujar el tablero con las fichas que yo ya escogi en la funcion anterior.
