@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void introduccion_numeros (char tablero[9]); //se llama a la funcion.
-void llenar_tablero (char tablero[9]); //se llama a la funcion.
+void introducir_numeros_en_el_tablero (char tablero[9]); //se llama a la funcion.
+void dibujar_tablero (char tablero[9]); //se llama a la funcion.
 void ingresar_fichas(char tablero[9]); //se llama a la funcion.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main()
 {
      char tablero[9]; //este vector vendria siendo nuestro tablero.
-     introduccion_numeros(tablero);
-     llenar_tablero(tablero);
+     introducir_numeros_en_el_tablero(tablero);
+     dibujar_tablero(tablero);
      ingresar_fichas(tablero);
 
      return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void introduccion_numeros (char tablero[9])//esta funcion lo que hace es llenar el tablero con valores numericos para despues poder escoger en que lugar de dicho tablero poner nuestra ficha.
+void introducir_numeros_en_el_tablero (char tablero[9])//esta funcion lo que hace es llenar el tablero con valores numericos para despues poder escoger en que lugar de dicho tablero poner nuestra ficha.
 {
   int i;//variable que solo sirve para llenar el for a continuacion.
   char aux='1';//esta variable denominada auxiliar ayuda para que el vector tome valores numericos a partir del 1.
@@ -29,7 +29,7 @@ void introduccion_numeros (char tablero[9])//esta funcion lo que hace es llenar 
 
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void llenar_tablero (char tablero[9])//esta funcion se va a encargar de llenar y dibujar el tablero.
+void dibujar_tablero (char tablero[9])//esta funcion se va a encargar de llenar y dibujar el tablero.
 {
   system( "CLS" );
         //todos estos printf sirven para dibujar el tablero en donde cada %c representa un lugar del vector.
@@ -47,29 +47,29 @@ void llenar_tablero (char tablero[9])//esta funcion se va a encargar de llenar y
 void ingresar_fichas (char tablero[9])//esta funcion sirve para que el jugador pueda meter su ficha X en el tablero.
 {
     int x[9];//vector.
-    int lugar_ocupado[9];//vector para indicar el lugar que se escogio para meter la ficha.
+    int lugar_escogido[9];//vector para indicar el lugar que se escogio para meter la ficha.
     int y;//variable para el for.
     int respuesta;//variable para el while.
 
     for (y=0;y<9;y++)
     {
-        x[y]=y+1;//el vector es igual a Y osea que vale 9 y se va incrementando.
-        lugar_ocupado[y]=0;
+        x[y]=y+1;
+        lugar_escogido[y]=0;
     }
-    y=0;//y empieza en cero.
-    while (y<9)//el proceso no va a terminar hasta que la tabla este llena.
+    y=0;
+    while (y<9)//el proceso no va a terminar hasta que el tablero este lleno.
     {
 
             system("cls");
-            llenar_tablero(tablero);//funcion que dibuja y llena la tabla con cumeros.
+            dibujar_tablero(tablero);//funcion que dibuja y llena el tablero con numeros.
             printf("ingrese un numero del 1 al 9 para ingresar su ficha = ");
             scanf("%d",&respuesta);
-            if (lugar_ocupado[respuesta-1]==0 && respuesta > 0 && respuesta < 10)//si la respuesta esta entre 0 y 10 entonces ocurre lo siguiente.
+            if (lugar_escogido[respuesta-1]==0 && respuesta > 0 && respuesta < 10)//si la respuesta esta entre 0 y 10 entonces ocurre lo siguiente.
             {
                 tablero[respuesta-1]= 'X';//en el casillero que elige el usuario se pondra una X.
-                lugar_ocupado[respuesta-1]=1;//se va a ocupar el lugar donde el usuario quiera.
-                y++;// si lo anterior no se cumple se vuelve a repetir el ciclo
-                llenar_tablero(tablero);//funcion que dibuja y llena la tabla con cumeros.
+                lugar_escogido[respuesta-1]=1;//se va a ocupar el lugar donde el usuario quiera.
+                y++;// si lo anterior no se cumple se vuelve a repetir el ciclo.
+                dibujar_tablero(tablero);//funcion que dibuja y llena el tablero con numeros.
             }
     }
 
