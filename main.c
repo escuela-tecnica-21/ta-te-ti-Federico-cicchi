@@ -2,9 +2,11 @@
 #include <stdlib.h>
 
 void llenar_tablero (char tablero[3][3]); //se llama a la funcion.
+void introduccion_numeros (char tablero[3][3]);
 int main()
 {
      char tablero [3][3]; //tablero.
+     introduccion_numeros(tablero);
      llenar_tablero(tablero);//dibuja tablero.
      return 0;
 }
@@ -34,3 +36,16 @@ void llenar_tablero (char tablero[3][3])
   printf("\n"); //este printf representa un espacio para separar el tablero de el return 0.
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void introduccion_numeros (char tablero[3][3])//esta funcion lo que hace es llenar el tablero con valores numericos.
+{
+  int i, j;//variables que solo sirven para llenar los for a continuacion.
+  char aux='1';//esta variable denominada auxiliar ayuda para que la matriz tome valores numericos a partir del 1."
+  for(i=0;i<3;i++)//este for sirve para poder llenar las filas de la matriz.
+  {
+      for(j=0;j<3;j++)//este for sirve para poder llenar las columnas de la matriz.
+      {
+        tablero[i][j]=aux++;//lo que aca pasa es que el tablero va a empezar con el valor numerico 1 hasta llegar a 9 debido a que se le va sumando de a 1 a la variable auxiliar.
+      }
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
